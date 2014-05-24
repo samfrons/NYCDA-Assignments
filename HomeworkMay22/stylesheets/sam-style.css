@@ -1,0 +1,100 @@
+/* put body at the top of the CSS file since it's a root element. just a better way to organize your CSS */ 
+
+body {
+	background-image: url(../images/otomi.jpeg);
+	font-family: courier;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+/* font-family only needs to be mentioned here if you apply to all elements */
+/* the background image must have url then proper path. the .. goes one folder outside then the / signifies to go into a folder, then images is the folder */ 
+/* I took out the margin and padding so the bottom white background is flush with the browser window edges */
+
+header {
+	text-align:center;
+	border-bottom-style: dotted;
+}
+
+header > img {
+	border-radius: 100%;
+	box-shadow: 0px 2px 5px rgba(0,0,0,0.6);
+	width: 200px;
+}
+/* this makes a 100% border radius for any img that is a direct child of the header element, in which case, your image. i like the effect, but i'd recommend something less pixelated. */
+h1 {
+	background: rgba(255,255,255,0.9);
+	box-shadow: 0px 2px 5px rgba(0,0,0,0.6);
+}
+/* the rgba is red, green, blue, alpha values for colors. the rgb values are 0 - 255 (integers) and the a is 0 - 1 (decimals)*/
+/* box-shadow is a nice CSS3 property to use */
+
+h1 a {
+	font-size: 20px;
+	float: right;
+	display: inline-block;
+	margin: 10px 10px 0 0;
+}
+/* here's some custom styles for the home link. I moved it to inside the h1 tag and made it display: inline-block; rather than it's inherent inline so i can control it's vertical margin and padding */
+
+.container {
+	max-width: 1400px;
+	width: 100%;
+	text-align: left;
+}
+
+.bottom {
+	background: rgba(255,255,255,0.9);
+	box-shadow: 0px -1px 2px -1px rgba(0,0,0,0.6);
+	overflow: auto;
+}
+/* when floating elements, a problem is that it makes a height of zero for their parent. adding overflow: auto; allows us to see the background */
+
+.bottom > div {
+	float: left;
+	width: 45%;
+	text-align: left;
+	padding: 20px;
+	min-width: 380px;
+}
+/* the > symbol means that any div that is a direct child of the .bottom class adopts these styles. meaning, it's just the div tags that are one level indented inside of the .bottom element */
+/* floating both the sidebar and contact left and giving them a width of 45% scales them down in 2 columns until the browser is so small that they would go below 380px. the min-width makes sure they make one column on a smaller view */
+
+
+.contact a {
+	display: block;
+}
+/* rather than adding <br> after each <a> to make a new line, do display: block;. <a> is inherently a inline element, meaning it takes up the width of its contents. block elements take up the width of their parent element, so it breaks to a new line */
+.publications {
+	text-align: center;
+	position: fixed;
+	height: 0px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	right: 0;
+	top: 10px;
+	padding-right: 20px;
+	width: 500px;
+	text-align: left;
+}
+
+.container2 {
+	margin-top: 0px;
+	right: 50%;
+	left: 50%;
+	text-align: center;
+}
+
+.gallery {
+	width: 100%;
+	background: white;
+	opacity: 0.9;
+	box-shadow: 0px 2px 5px rgba(0,0,0,0.6);
+}
+
+.gallery img {
+	width: 200px;
+	vertical-align: middle;
+}
+/* this is the style for just your images inside the gallery class. vertical-align: middle; sets all images in the middle, because all of them aligned at the bottom looks wonky since you have such a long image offsetting the rest */
+
